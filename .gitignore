@@ -1,0 +1,40 @@
+# GitBook 忽略文件
+
+# GitBook 构建输出
+_book/
+
+# GitBook 缓存
+.gitbook/
+
+# GitBook 安装目录
+node_modules/
+
+# 日志
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 编辑器
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# 临时文件
+*.tmp
+*.temp
+
+# GitHub Actions（不要忽略）
+!.github/

@@ -1,0 +1,90 @@
+{
+  "title": "OpenClaw 源码学习笔记",
+  "description": "深入理解 OpenClaw 架构设计和实现原理",
+  "author": "tn zha",
+  "language": "zh-hans",
+  "plugins": [
+    "-highlight",
+    "prism",
+    "prism-themes",
+    "github-buttons",
+    "edit-link",
+    "sharing-plus",
+    "search-pro",
+    "chapter-fold",
+    "code",
+    "splitter",
+    "page-toc-button",
+    "back-to-top-button",
+    "hide-element",
+    "tbfed-pagefooter",
+    "pageview-count",
+    "popup",
+    "lightbox"
+  ],
+  "pluginsConfig": {
+    "prism": {
+      "css": [
+        "prism-themes/themes/prism-atom-dark.css"
+      ],
+      "lang": {
+        "shell": "bash",
+        "typescript": "typescript"
+      }
+    },
+    "github-buttons": {
+      "buttons": [
+        {
+          "user": "openclaw",
+          "repo": "openclaw",
+          "type": "star",
+          "size": "small",
+          "count": true
+        }
+      ]
+    },
+    "edit-link": {
+      "base": "https://github.com/yourusername/openclaw-learning/edit/master",
+      "label": "编辑此页"
+    },
+    "sharing": {
+      "douban": false,
+      "facebook": false,
+      "google": true,
+      "pocket": false,
+      "qq": true,
+      "qzone": true,
+      "twitter": false,
+      "weibo": true,
+      "all": [
+        "douban",
+        "google",
+        "qq",
+        "qzone",
+        "weibo"
+      ]
+    },
+    "hide-element": {
+      "elements": [
+        ".gitbook-link"
+      ]
+    },
+    "tbfed-pagefooter": {
+      "copyright": "Copyright © tn zha 2026",
+      "modify_label": "该文件修订时间：",
+      "modify_format": "YYYY-MM-DD HH:mm:ss"
+    },
+    "pageview-count": {
+      "position": "top"
+    }
+  },
+  "styles": {
+    "website": "styles/website.css"
+  },
+  "structure": {
+    "readme": "README.md",
+    "glossary": {
+      "glossary": "GLOSSARY.md"
+    }
+  }
+}
