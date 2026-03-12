@@ -6,54 +6,226 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta name="description" content="深入理解 OpenClaw 架构设计和实现原理">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-  
+
   <!-- Theme -->
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
-  
+
   <!-- Custom styles -->
   <style>
     :root {
       --theme-color: #3498db;
       --theme-color-dark: #2980b9;
+      --sidebar-width: 320px;
     }
-    
+
+    /* 优化侧边栏 */
+    .sidebar {
+      padding: 20px 0;
+      width: var(--sidebar-width);
+    }
+
+    .sidebar-nav {
+      padding: 0 20px;
+    }
+
+    /* 一级标题样式 */
     .sidebar-nav > ul > li > p {
       font-weight: 600;
-      font-size: 1.1em;
-      margin-top: 1em;
-    }
-    
-    .markdown-section h1 {
+      font-size: 1.2em;
+      margin-top: 1.5em;
+      margin-bottom: 0.5em;
       color: var(--theme-color);
       border-bottom: 2px solid var(--theme-color);
-      padding-bottom: 0.5em;
-    }
-    
-    .markdown-section h2 {
-      color: #2c3e50;
-      border-bottom: 1px solid #e0e0e0;
       padding-bottom: 0.3em;
     }
-    
+
+    /* 二级标题样式 */
+    .sidebar-nav > ul > li > ul > li > p {
+      font-weight: 600;
+      font-size: 1em;
+      margin-top: 1em;
+      color: #2c3e50;
+    }
+
+    /* 链接样式 */
+    .sidebar-nav a {
+      color: #34495e;
+      text-decoration: none;
+      display: block;
+      padding: 6px 12px;
+      border-radius: 4px;
+      transition: all 0.2s;
+    }
+
+    .sidebar-nav a:hover {
+      background-color: #f8f9fa;
+      color: var(--theme-color);
+    }
+
+    .sidebar-nav a.active {
+      background-color: var(--theme-color);
+      color: white;
+      font-weight: 600;
+    }
+
+    /* 优化内容区 */
+    .markdown-section {
+      max-width: 900px;
+      padding: 30px 60px;
+    }
+
+    /* 标题样式 */
+    .markdown-section h1 {
+      color: var(--theme-color);
+      border-bottom: 3px solid var(--theme-color);
+      padding-bottom: 0.5em;
+      margin-bottom: 1em;
+    }
+
+    .markdown-section h2 {
+      color: #2c3e50;
+      border-bottom: 2px solid #e0e0e0;
+      padding-bottom: 0.3em;
+      margin-top: 2em;
+    }
+
+    .markdown-section h3 {
+      color: #34495e;
+      margin-top: 1.5em;
+    }
+
+    /* 代码块样式 */
     .markdown-section code {
       background-color: #f8f9fa;
       padding: 2px 6px;
       border-radius: 3px;
+      font-family: 'SF Mono', 'Monaco', 'Inconsolata', monospace;
     }
-    
+
     .markdown-section pre {
       background-color: #282c34;
-      border-radius: 6px;
+      border-radius: 8px;
+      padding: 16px;
+      overflow-x: auto;
     }
-    
+
     .markdown-section pre code {
       color: #abb2bf;
+      background-color: transparent;
+      padding: 0;
+    }
+
+    /* 表格样式 */
+    .markdown-section table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 20px 0;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .markdown-section table th {
+      background-color: var(--theme-color);
+      color: white;
+      padding: 12px;
+      text-align: left;
+      font-weight: 600;
+    }
+
+    .markdown-section table td {
+      border: 1px solid #e0e0e0;
+      padding: 12px;
+    }
+
+    .markdown-section table tr:nth-child(even) {
+      background-color: #f8f9fa;
+    }
+
+    /* 引用块样式 */
+    .markdown-section blockquote {
+      border-left: 4px solid var(--theme-color);
+      background-color: #f8f9fa;
+      padding: 16px;
+      margin: 20px 0;
+      border-radius: 4px;
+    }
+
+    /* 返回顶部按钮 */
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      background-color: var(--theme-color);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      opacity: 0;
+      transition: all 0.3s;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      z-index: 1000;
+    }
+
+    .back-to-top.show {
+      opacity: 1;
+    }
+
+    .back-to-top:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+    }
+
+    /* 进度指示器 */
+    .progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      background-color: var(--theme-color);
+      z-index: 1000;
+      transition: width 0.2s;
+    }
+
+    /* 移动端优化 */
+    @media (max-width: 768px) {
+      .sidebar {
+        width: 280px;
+      }
+
+      .markdown-section {
+        padding: 20px;
+      }
+
+      .back-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+      }
+    }
+
+    /* 搜索框优化 */
+    .search input {
+      border-radius: 20px;
+      border: 2px solid #e0e0e0;
+      padding: 8px 16px;
+      transition: all 0.3s;
+    }
+
+    .search input:focus {
+      border-color: var(--theme-color);
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
     }
   </style>
 </head>
 <body>
   <div id="app">Loading...</div>
-  
+
   <script>
     window.$docsify = {
       name: 'OpenClaw 源码学习笔记',
@@ -61,19 +233,20 @@
       loadSidebar: 'SUMMARY.md',
       subMaxLevel: 3,
       auto2top: true,
-      
+
       // 路由配置 - 使用 hash 模式以支持 GitHub Pages
       routerMode: 'hash',
-      
+
       // 搜索配置
       search: {
         maxAge: 86400000,
         paths: 'auto',
-        placeholder: '搜索',
-        noData: '没有结果',
-        depth: 6
+        placeholder: '搜索文档',
+        noData: '没有找到结果',
+        depth: 6,
+        hideOtherSidebarContent: true
       },
-      
+
       // 分页导航
       pagination: {
         previousText: '上一章节',
@@ -81,7 +254,7 @@
         crossChapter: true,
         crossChapterText: true,
       },
-      
+
       // 字数统计
       count: {
         countable: true,
@@ -89,44 +262,157 @@
         color: 'rgb(90,90,90)',
         language: 'chinese'
       },
-      
+
       // 外部链接
       externalLinkTarget: '_blank',
-      
+
       // 页面跳转
       alias: {
         '/': '/README',
         '/basics': '/basics/introduction',
         '/architecture': '/architecture/overview'
-      }
+      },
+
+      // 不需要编译的路径
+      notCompile: [
+        '/assets/',
+        '/images/'
+      ],
+
+      // 相对路径
+      relativePath: true,
+
+      // 顶部导航
+      topMargin: 90
     }
   </script>
-  
+
   <!-- Docsify 核心 -->
   <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>
-  
+
   <!-- 搜索插件 -->
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
-  
+
   <!-- 代码高亮 -->
   <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-typescript.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-python.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-javascript.min.js"></script>
-  
+
   <!-- 分页导航插件 -->
   <script src="//cdn.jsdelivr.net/npm/docsify-pagination@2/dist/docsify-pagination.min.js"></script>
-  
+
   <!-- 字数统计插件 -->
   <script src="//cdn.jsdelivr.net/npm/docsify-count@latest/dist/countable.min.js"></script>
-  
+
   <!-- 外部链接插件 -->
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/external-script.min.js"></script>
-  
+
   <!-- Emoji 支持 -->
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script>
   
   <!-- 复制代码插件 -->
   <script src="//cdn.jsdelivr.net/npm/docsify-copy-code@2"></script>
+  
+  <!-- 返回顶部和进度条 -->
+  <script>
+    // 添加返回顶部按钮
+    const backToTop = document.createElement('div');
+    backToTop.className = 'back-to-top';
+    backToTop.innerHTML = '↑';
+    backToTop.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+    document.body.appendChild(backToTop);
+    
+    // 添加进度条
+    const progress = document.createElement('div');
+    progress.className = 'progress';
+    progress.style.width = '0%';
+    document.body.appendChild(progress);
+    
+    // 滚动监听
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPercent = (scrollTop / scrollHeight) * 100;
+      
+      // 更新进度条
+      progress.style.width = scrollPercent + '%';
+      
+      // 显示/隐藏返回顶部按钮
+      if (scrollTop > 300) {
+        backToTop.classList.add('show');
+      } else {
+        backToTop.classList.remove('show');
+      }
+    });
+    
+    // 键盘快捷键
+    document.addEventListener('keydown', (e) => {
+      // Ctrl/Cmd + K: 聚焦搜索框
+      if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+        e.preventDefault();
+        const searchInput = document.querySelector('.search input');
+        if (searchInput) {
+          searchInput.focus();
+        }
+      }
+      
+      // Esc: 清除搜索
+      if (e.key === 'Escape') {
+        const searchInput = document.querySelector('.search input');
+        if (searchInput && document.activeElement === searchInput) {
+          searchInput.blur();
+          searchInput.value = '';
+        }
+      }
+    });
+    
+    // 页面加载完成后优化
+    window.addEventListener('load', () => {
+      // 平滑滚动
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth' });
+          }
+        });
+      });
+      
+      // 添加图片点击放大功能
+      document.querySelectorAll('.markdown-section img').forEach(img => {
+        img.style.cursor = 'pointer';
+        img.onclick = () => {
+          const modal = document.createElement('div');
+          modal.style.cssText = `
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            cursor: pointer;
+          `;
+          
+          const fullImg = document.createElement('img');
+          fullImg.src = img.src;
+          fullImg.style.cssText = `
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+          `;
+          
+          modal.appendChild(fullImg);
+          modal.onclick = () => modal.remove();
+          document.body.appendChild(modal);
+        };
+      });
+    });
+  </script>
 </body>
 </html>
