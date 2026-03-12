@@ -6,84 +6,82 @@
 
 ## 基础篇
 * [项目介绍](basics/introduction.md)
-* [快速开始](basics/quick-start.md)
 * [核心概念](basics/core-concepts.md)
-  * [Gateway](basics/gateway-basics.md)
-  * [Agent](basics/agent-basics.md)
-  * [Channels](basics/channels-basics.md)
+  * Gateway 网关
+  * Agent 助手
+  * Memory 记忆
+  * Skills 技能
+  * Channels 渠道
+* [快速开始](basics/quick-start.md)（待添加）
 
 ## 架构篇
 * [整体架构](architecture/overview.md)
 * [Gateway 网关](architecture/gateway.md)
-  * [WebSocket 协议](architecture/websocket-protocol.md)
-  * [认证与配对](architecture/authentication.md)
+  * WebSocket 协议
+  * 认证与配对
+  * 会话管理
 * [Agent 助手](architecture/agent.md)
-  * [消息处理](architecture/message-processing.md)
-  * [工具调用](architecture/tool-calling.md)
+  * 消息处理
+  * 上下文构建
+  * 工具调用
 * [Memory 记忆](architecture/memory.md)
-  * [短期记忆](architecture/short-term-memory.md)
-  * [长期记忆](architecture/long-term-memory.md)
-  * [向量检索](architecture/vector-search.md)
-* [Skills 技能](architecture/skills.md)
-  * [技能定义](architecture/skill-definition.md)
-  * [技能加载](architecture/skill-loading.md)
-* [Extensions 扩展](architecture/extensions.md)
-  * [渠道扩展](architecture/channel-extensions.md)
-  * [功能扩展](architecture/feature-extensions.md)
-* [Plugins 插件](architecture/plugins.md)
-  * [插件生命周期](architecture/plugin-lifecycle.md)
-  * [Plugin SDK](architecture/plugin-sdk.md)
+  * 短期记忆
+  * 长期记忆
+  * 向量检索
+* [Skills 技能](architecture/skills.md)（待添加）
+  * 技能定义
+  * 技能加载
+* [Extensions 扩展](architecture/extensions.md)（待添加）
+  * 渠道扩展
+  * 功能扩展
+* [Plugins 插件](architecture/plugins.md)（待添加）
+  * 插件生命周期
+  * Plugin SDK
 
 ## 实践篇
-* [开发环境搭建](practice/setup.md)
-  * [安装依赖](practice/install-dependencies.md)
-  * [IDE 配置](practice/ide-setup.md)
-* [创建第一个 Skill](practice/first-skill.md)
-  * [技能设计](practice/skill-design.md)
-  * [实现代码](practice/skill-implementation.md)
-  * [测试调试](practice/skill-testing.md)
-* [开发 Extension](practice/extension-dev.md)
-  * [扩展模板](practice/extension-template.md)
-  * [消息处理](practice/extension-message-handling.md)
-* [调试技巧](practice/debugging.md)
-  * [日志分析](practice/log-analysis.md)
-  * [性能分析](practice/performance-profiling.md)
+* [开发环境搭建](practice/setup.md)（待添加）
+  * 安装依赖
+  * IDE 配置
+* [创建第一个 Skill](practice/first-skill.md)（待添加）
+  * 技能设计
+  * 实现代码
+  * 测试调试
+* [开发 Extension](practice/extension-dev.md)（待添加）
+  * 扩展模板
+  * 消息处理
 
 ## 源码分析篇
-* [消息处理流程](source-code/message-flow.md)
-  * [入站消息](source-code/inbound-message.md)
-  * [出站消息](source-code/outbound-message.md)
-* [WebSocket 协议](source-code/websocket-protocol.md)
-  * [连接建立](source-code/connection-establishment.md)
-  * [请求响应](source-code/request-response.md)
-  * [事件推送](source-code/event-pushing.md)
-* [插件加载机制](source-code/plugin-loading.md)
-  * [插件发现](source-code/plugin-discovery.md)
-  * [依赖注入](source-code/dependency-injection.md)
-* [AI 模型调用](source-code/model-invocation.md)
-  * [模型选择](source-code/model-selection.md)
-  * [流式响应](source-code/streaming-response.md)
+* [消息处理流程](source-code/message-flow.md)（待添加）
+  * 入站消息
+  * 出站消息
+* [WebSocket 协议](source-code/websocket-protocol.md)（待添加）
+  * 连接建立
+  * 请求响应
+  * 事件推送
+* [插件加载机制](source-code/plugin-loading.md)（待添加）
+  * 插件发现
+  * 依赖注入
 
 ## 进阶篇
-* [性能优化](advanced/performance.md)
-  * [连接池](advanced/connection-pooling.md)
-  * [缓存策略](advanced/caching.md)
-  * [内存管理](advanced/memory-management.md)
-* [安全机制](advanced/security.md)
-  * [认证授权](advanced/authentication-authorization.md)
-  * [数据加密](advanced/encryption.md)
-  * [输入验证](advanced/input-validation.md)
-* [测试策略](advanced/testing.md)
-  * [单元测试](advanced/unit-testing.md)
-  * [集成测试](advanced/integration-testing.md)
-  * [E2E 测试](advanced/e2e-testing.md)
-* [部署运维](advanced/deployment.md)
-  * [Docker 部署](advanced/docker-deployment.md)
-  * [监控告警](advanced/monitoring.md)
-  * [日志管理](advanced/logging.md)
+* [性能优化](advanced/performance.md)（待添加）
+  * 连接池
+  * 缓存策略
+  * 内存管理
+* [安全机制](advanced/security.md)（待添加）
+  * 认证授权
+  * 数据加密
+  * 输入验证
+* [测试策略](advanced/testing.md)（待添加）
+  * 单元测试
+  * 集成测试
+  * E2E 测试
+* [部署运维](advanced/deployment.md)（待添加）
+  * Docker 部署
+  * 监控告警
+  * 日志管理
 
 ## 附录
-* [术语表](appendix/glossary.md)
-* [常见问题](appendix/faq.md)
-* [参考资源](appendix/resources.md)
-* [更新日志](appendix/changelog.md)
+* [术语表](appendix/glossary.md)（待添加）
+* [常见问题](appendix/faq.md)（待添加）
+* [参考资源](appendix/resources.md)（待添加）
+* [更新日志](appendix/changelog.md)（待添加）
