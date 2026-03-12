@@ -8,69 +8,39 @@
 ## 📚 基础篇
 
 * [项目介绍](basics/introduction)
-  * 什么是 OpenClaw
-  * 为什么学习
-  * 技术栈
-  
 * [核心概念](basics/core-concepts)
-  * Gateway 网关
-  * Agent 助手
-  * Memory 记忆
-  * Skills 技能
-  * Extensions 扩展
 
 ---
 
 ## 🏗️ 架构篇
+
 * [整体架构](architecture/overview)
-  * 架构图
-  * 核心组件
-  * 数据流
-  
 * [Gateway 网关详解](architecture/gateway)
-  * 核心职责
-  * WebSocket 协议
-  * 认证与配对
-  * 会话管理
-  * 事件分发
-  * 配置与安全
-  
 * [Agent 助手详解](architecture/agent)
-  * 消息处理
-  * 上下文构建
-  * 模型调用
-  * 工具执行
-  * 响应生成
-  * 技能集成
-  
 * [Memory 记忆详解](architecture/memory)
-  * 短期记忆
-  * 长期记忆
-  * 向量存储
-  * HNSW 索引
-  * 配置与优化
 
 ---
 
 ## 🎯 学习路径
 
 ### 初学者路径
-1. [项目介绍](basics/introduction) - 了解 OpenClaw
-2. [核心概念](basics/core-concepts) - 理解基础概念
-3. [整体架构](architecture/overview) - 掌握整体设计
-4. [Gateway 网关](architecture/gateway) - 深入控制平面
-5. [Agent 助手](architecture/agent) - 学习智能核心
-6. [Memory 记忆](architecture/memory) - 了解记忆系统
+1. [项目介绍](basics/introduction)
+2. [核心概念](basics/core-concepts)
+3. [整体架构](architecture/overview)
+4. [Gateway 网关](architecture/gateway)
+5. [Agent 助手](architecture/agent)
+6. [Memory 记忆](architecture/memory)
 
 ### 有经验者路径
-1. [整体架构](architecture/overview) - 快速了解
-2. [Gateway 网关](architecture/gateway) - 选择感兴趣的模块
-3. [Agent 助手](architecture/agent) - 深入实现细节
-4. [Memory 记忆](architecture/memory) - 优化性能
+1. [整体架构](architecture/overview)
+2. [Gateway 网关](architecture/gateway)
+3. [Agent 助手](architecture/agent)
+4. [Memory 记忆](architecture/memory)
 
 ---
 
 ## 🔗 相关链接
+
 * [OpenClaw 官方文档](https://docs.openclaw.ai)
 * [GitHub 仓库](https://github.com/openclaw/openclaw)
 * [Discord 社区](https://discord.gg/clawd)
