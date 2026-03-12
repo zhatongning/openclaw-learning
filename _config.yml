@@ -1,20 +1,7 @@
 theme: jekyll-theme-cayman
-show_downloads: false
 title: OpenClaw 源码学习笔记
 description: 深入理解 OpenClaw 架构设计和实现原理
-google_analytics: 
-markdown: kramdown
-highlighter: rouge
-plugins:
-  - jekyll-feed
-  - jekyll-sitemap
-exclude:
-  - Gemfile
-  - Gemfile.lock
-  - node_modules
-  - vendor
-  - ".gitignore"
-  - "*.sh"
-  - GITHUB_PAGES.md
-  - GITBOOK_GUIDE.md
-  - PROJECT_STATUS.md
+author: tn zha
+lang: zh-CN
+show_downloads: false
+google_analytics:
