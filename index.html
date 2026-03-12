@@ -266,21 +266,14 @@
       // 外部链接
       externalLinkTarget: '_blank',
 
-      // 页面跳转
+      // 页面跳转别名
       alias: {
-        '/': '/README',
-        '/basics': '/basics/introduction',
-        '/architecture': '/architecture/overview'
+        '/.*/_sidebar.md': '/_sidebar.md',
+        '/.*/SUMMARY.md': '/SUMMARY.md'
       },
 
-      // 不需要编译的路径
-      notCompile: [
-        '/assets/',
-        '/images/'
-      ],
-
-      // 相对路径
-      relativePath: true,
+      // 相对路径 - 设置为 false 避免路径计算错误
+      relativePath: false,
 
       // 顶部导航
       topMargin: 90
