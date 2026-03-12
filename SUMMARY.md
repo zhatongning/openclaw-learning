@@ -15,20 +15,19 @@
 * [核心概念](basics/core-concepts.md)
   * Gateway 网关
   * Agent 助手
-  * Memory 记忆
+  * Memory 讋忆
   * Skills 技能
   * Extensions 扩展
 
 ---
 
 ## 🏗️ 架构篇
-
 * [整体架构](architecture/overview.md)
   * 架构图
   * 核心组件
   * 数据流
   
-* **[Gateway 网关详解](architecture/gateway.md)**
+* [Gateway 网关详解](architecture/gateway.md)
   * 核心职责
   * WebSocket 协议
   * 认证与配对
@@ -36,7 +35,7 @@
   * 事件分发
   * 配置与安全
   
-* **[Agent 助手详解](architecture/agent.md)**
+* [Agent 助手详解](architecture/agent.md)
   * 消息处理
   * 上下文构建
   * 模型调用
@@ -44,7 +43,7 @@
   * 响应生成
   * 技能集成
   
-* **[Memory 记忆详解](architecture/memory.md)**
+* [Memory 记忆详解](architecture/memory.md)
   * 短期记忆
   * 长期记忆
   * 向量存储
@@ -71,41 +70,8 @@
 
 ---
 
-## 🔧 实践指南
-
-* [开发环境搭建](practice/setup.md) ⏳
-* [创建第一个 Skill](practice/first-skill.md) ⏳
-* [开发 Extension](practice/extension-dev.md) ⏳
-
----
-
-## 📊 进阶主题
-
-* [性能优化](advanced/performance.md) ⏳
-* [安全机制](advanced/security.md) ⏳
-* [测试策略](advanced/testing.md) ⏳
-* [部署运维](advanced/deployment.md) ⏳
-
----
-
-## 📖 附录
-
-* [术语表](appendix/glossary.md) ⏳
-* [常见问题](appendix/faq.md) ⏳
-* [参考资源](appendix/resources.md) ⏳
-
----
-
 ## 🔗 相关链接
-
 * [OpenClaw 官方文档](https://docs.openclaw.ai)
 * [GitHub 仓库](https://github.com/openclaw/openclaw)
 * [Discord 社区](https://discord.gg/clawd)
 * [本项目 GitHub](https://github.com/zhatongning/openclaw-learning)
-
----
-
-**提示**：
-- ✅ 已完成的章节可以直接阅读
-- ⏳ 计划中的章节正在编写中
-- 点击左侧导航可以快速跳转
