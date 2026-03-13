@@ -21,21 +21,30 @@
 
 ---
 
+## 📊 流程图篇
+
+* [消息处理流程（详细版）](MESSAGE_FLOW_DIAGRAM)
+* [消息处理流程（简洁版）](MESSAGE_FLOW_SIMPLE)
+
+---
+
 ## 🎯 学习路径
 
 ### 初学者路径
 1. [项目介绍](basics/introduction)
 2. [核心概念](basics/core-concepts)
 3. [整体架构](architecture/overview)
-4. [Gateway 网关](architecture/gateway)
-5. [Agent 助手](architecture/agent)
-6. [Memory 记忆](architecture/memory)
+4. [消息处理流程](MESSAGE_FLOW_SIMPLE)
+5. [Gateway 网关](architecture/gateway)
+6. [Agent 助手](architecture/agent)
+7. [Memory 记忆](architecture/memory)
 
 ### 有经验者路径
 1. [整体架构](architecture/overview)
-2. [Gateway 网关](architecture/gateway)
-3. [Agent 助手](architecture/agent)
-4. [Memory 记忆](architecture/memory)
+2. [消息处理流程](MESSAGE_FLOW_DIAGRAM)
+3. [Gateway 网关](architecture/gateway)
+4. [Agent 助手](architecture/agent)
+5. [Memory 记忆](architecture/memory)
 
 ---
 
