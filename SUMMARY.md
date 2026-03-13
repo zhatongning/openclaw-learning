@@ -25,6 +25,7 @@
 
 * [消息处理流程（详细版）](MESSAGE_FLOW_DIAGRAM)
 * [消息处理流程（简洁版）](MESSAGE_FLOW_SIMPLE)
+* [代码调用流程图](CODE_FLOW_DIAGRAM) ⭐ 新增
 
 ---
 
@@ -34,17 +35,18 @@
 1. [项目介绍](basics/introduction)
 2. [核心概念](basics/core-concepts)
 3. [整体架构](architecture/overview)
-4. [消息处理流程](MESSAGE_FLOW_SIMPLE)
+4. [消息处理流程（简洁版）](MESSAGE_FLOW_SIMPLE)
 5. [Gateway 网关](architecture/gateway)
 6. [Agent 助手](architecture/agent)
 7. [Memory 记忆](architecture/memory)
 
 ### 有经验者路径
 1. [整体架构](architecture/overview)
-2. [消息处理流程](MESSAGE_FLOW_DIAGRAM)
-3. [Gateway 网关](architecture/gateway)
-4. [Agent 助手](architecture/agent)
-5. [Memory 记忆](architecture/memory)
+2. [消息处理流程（详细版）](MESSAGE_FLOW_DIAGRAM)
+3. [代码调用流程图](CODE_FLOW_DIAGRAM) ⭐ 新增
+4. [Gateway 网关](architecture/gateway)
+5. [Agent 助手](architecture/agent)
+6. [Memory 记忆](architecture/memory)
 
 ---
 
