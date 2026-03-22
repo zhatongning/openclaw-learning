@@ -26,6 +26,7 @@
 * [Extensions 扩展](architecture/extensions.md)
   * [渠道扩展](architecture/channel-extensions.md)
   * [功能扩展](architecture/feature-extensions.md)
+* [微信接入](architecture/wechat-integration.md)
 
 ## 实践篇
 * [开发环境搭建](practice/setup.md)
